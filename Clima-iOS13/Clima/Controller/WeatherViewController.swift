@@ -11,7 +11,6 @@ import CoreLocation
 
 class WeatherViewController: UIViewController {
     
-    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -29,7 +28,6 @@ class WeatherViewController: UIViewController {
         //Запрос requestLocation выполняется только после определения делегата и его методов(DidUpdate and DidFail)
         locationManager.requestLocation()
         
-        
         weatherManager.delegate = self
         searchTextField.delegate = self
         
@@ -43,8 +41,6 @@ class WeatherViewController: UIViewController {
         locationManager.requestLocation()
     }
 }
-    
-
 
 //MARK: - UITextFieldDelegate
 extension WeatherViewController: UITextFieldDelegate {
@@ -95,7 +91,7 @@ extension WeatherViewController: WeatherManagerDelegate {
 extension WeatherViewController: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print(error)
+        print(error)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {

@@ -55,7 +55,6 @@ struct WeatherManager {
             }
             //        4 Start the task
             task.resume()
-            
         }
     }
     
